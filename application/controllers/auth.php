@@ -10,6 +10,10 @@ class Auth extends CI_Controller {
 
 	function index()
 	{
+		// Load config and library
+		$this->load->config('dwolla');
+		$this->load->library('Dwolla');
+
 		// Did we get an OAuth callback?
 		if ($this->input->get('code'))
 		{
